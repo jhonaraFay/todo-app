@@ -80,6 +80,9 @@ export default function TaskManager() {
               <span className="task-text" onClick={() => toggleTaskStatus(index)}>{task.text}</span>
             )}
             <div className="task-controls">
+			    <button className="complete-btn" onClick={() => toggleTaskStatus(index)}>
+                {task.done ? "✅ Completed" : "✔ Complete"}
+              </button>
               <button className="delete-btn" onClick={() => handleDeleteTask(index)}>❌</button>
               {editingTask === index ? (
                 <button className="save-btn" onClick={() => saveEdit(index)}>💾</button>
